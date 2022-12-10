@@ -1,0 +1,63 @@
+.productListTileBox {
+    width: 1050px;
+    margin: auto;
+    text-align: center;
+}
+
+.productListTile {
+    margin-top: 50px;
+    display: block;
+    font-size: 50px;
+}
+
+.productListContainer {
+    width: 1050px;
+    height: 800px;
+    margin: 50px auto 100px auto;
+}
+
+.sideBar {
+    width: 25%;
+    text-align: center;
+    position: sticky;
+    top: 200px;
+    float: left;
+}
+
+.productListMain {
+    width: 75%;
+    float: right;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product {
+    width: 32%;
+    height: 250px;
+    margin: 0px 1.3% 5px 0px;
+    border: 1px #eee solid;
+    overflow: hidden;
+}
+
+.productImgDiv {
+    width: 100%;
+    height: 80%;
+    overflow: hidden;
+}
+
+.productImg {
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+}
+
+.productText {
+    width: 100%;
+    height: 20%;
+    text-align: center;
+}
+
+.productImg:hover {
+    transform: scale(1.2);
+    transition: 0.5s;
+}

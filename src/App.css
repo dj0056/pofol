@@ -1,0 +1,240 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  margin-top: 70px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: 1050px;
+  margin: auto;
+}
+
+header {
+  display: flex;
+  background-color: black;
+  height: 70px;
+  padding: 0px 15px;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  z-index: 5;
+  left: 50%;
+  transform: translate(-50%, 0);
+  border-radius: 0px 0px 5px 5px;
+}
+
+header h2 {
+  color: white;
+  text-align: center;
+  margin-right: 20px;
+  flex-grow: 0;
+}
+
+.headerList {
+  list-style: none;
+  display: flex;
+  color: white;
+  padding: 0px;
+  text-align: center;
+  flex-grow: 5;
+}
+
+.headerList a {
+  color: inherit;
+  text-decoration: none;
+  transition: 0.5s;
+  width: 100px;
+  line-height: 70px;
+}
+
+.headerList a li {
+  margin: 0 20px;
+}
+
+.headerList a:hover {
+  color: black;
+  background-color: white;
+  border-radius: 3px;
+}
+
+.loginBtn {
+  float: right;
+  flex-grow: 0;
+  border: none;
+  font-size: 20px;
+  background-color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+
+
+
+
+
+.carouselContainer {
+  overflow: hidden;
+  position: relative;
+}
+
+.carouselContainer h1 {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.carousel {
+  width: 300%;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  transition: 0.5s;
+}
+
+.slideItem {
+  width: 100%;
+  text-align: center;
+}
+
+.carousel .slideItem img {
+  max-width: 50%;
+}
+
+.slideBtnLeft {
+  top: 300px;
+  position: absolute;
+  margin: 0px 30px;
+  font-size: 50px;
+  left: 15%;
+  border-radius: 50%;
+  border: none;
+  background-color: #eee;
+  color: black;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.slideBtnRight {
+  top: 300px;
+  position: absolute;
+  margin: 0px 30px;
+  font-size: 50px;
+  right: 15%;
+  border-radius: 50%;
+  border: none;
+  background-color: #eee;
+  color: black;
+  cursor: pointer;
+}
+
+.carouselDot {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.dot {
+  height: 18px;
+  width: 18px;
+  background-color: white;
+  border: 2px black solid;
+  border-radius: 50%;
+  margin: 0px 20px;
+}
+
+.current {
+  height: 18px;
+  width: 18px;
+  background-color: black;
+  border: 2px black solid;
+  border-radius: 50%;
+  margin: 0px 20px;
+}
+
+
+
+.productsTile {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.productContainer {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  margin-bottom: 100px;
+}
+
+.productItem {
+  width: 24%;
+  border: 1px #eee solid;
+  text-align: center;
+  margin: 10px 0.5%;
+}
+
+.productItem>div {
+  width: 100%;
+  height: 75%;
+  overflow: hidden;
+}
+
+.productItem>div>img {
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+}
+
+.productItem>h4 {
+  margin-top: 20px;
+}
+
+.productItem>div>img:hover {
+  transform: scale(1.2);
+  transition: 0.5s;
+}
+
+
+
+
+
+
+footer {
+  width: 100%;
+  margin: auto;
+  background-color: black;
+  height: 200px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

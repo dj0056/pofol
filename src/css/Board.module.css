@@ -1,0 +1,72 @@
+/* Board.js CSS */
+.boardContainer {
+    margin: 0px auto 100px auto;
+    width: 1050px;
+    height: 800px;
+    background-color: #eee;
+}
+
+.boardTitle {
+    margin: 100px 0px 30px 0px;
+    text-align: center;
+}
+
+.boardTable {
+    display: flex;
+    background-color: black;
+    color: white;
+    margin: 0px 15px 0px 15px;
+
+}
+
+.boardList {
+    display: flex;
+    border-bottom: 1px #5a5a64 solid ;
+    padding: 0.4rem;
+    margin: 0px 15px 0px 15px;
+}
+
+.boardList:hover {
+    background-color: #5a5a64;
+}
+
+/* BoardDetail.js CSS */
+.boardStyle {
+    width: 80%;
+    padding-top: 50px;
+    margin: auto;
+}
+
+.boardDescription {
+    display: flex;
+}
+
+.boardDescription > div:nth-child(odd) {
+    background-color: #5a5a64;
+    color: white;
+    flex: 1;
+}
+.boardDescription > div:nth-child(2) {
+    flex: 1;
+}
+.boardDescription > div:nth-child(4) {
+    flex: 6;
+}
+.boardDescription > div:nth-child(6) {
+    flex: 1;
+}
+.boardDescription > div:nth-child(8) {
+    flex: 1;
+    border-right: 1px black solid;
+}
+
+.boardDescription > div {
+    border: 1px black solid;
+    border-right: 0px;
+    padding: 3px;
+    text-align: center;
+}
+
+.textArea {
+    padding: 20px;
+}
