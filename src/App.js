@@ -6,6 +6,7 @@ import { Routes, Route, Link, useNavigate } from 'react-router-dom';
 import Board from './routes/Board.js'
 import ProductList from './routes/ProductList.js'
 import BoardDetail from './component/BoardDetail';
+import ProductDetail from './routes/ProductDetail';
 import BoardData from './data/BoardData.js'
 // import 'bootstrap/dist/css/bootstrap.min.css';
 // import { Button, Container } from 'react-bootstrap';
@@ -87,7 +88,7 @@ function App() {
               {
                 product.map((a, i) => {
                   return (
-                    <div className='productItem' key={i}>
+                    <div className='productItem' key={i} onClick={() => { navigate('/ProductDetail/'+ (product[i].no)) }}>
                       <div>
                         <img src={process.env.PUBLIC_URL + '/image/' + (product[i].imageName) + '.jpg'} />
                       </div>
@@ -105,6 +106,7 @@ function App() {
         <Route path='/Board' element={<Board />} />
         <Route path='/BoardDetail/:id' element={<BoardDetail board={board} />} />
         <Route path='/ProductList' element={<ProductList />} />
+        <Route path='/ProductDetail/:id' element={<ProductDetail product={product} />} />
       </Routes>
 
 
