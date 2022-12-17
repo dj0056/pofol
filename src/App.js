@@ -5,11 +5,11 @@ import { useEffect, useState } from 'react';
 import { Routes, Route, Link, useNavigate } from 'react-router-dom';
 import Board from './routes/Board.js'
 import ProductList from './routes/ProductList.js'
-import BoardDetail from './component/BoardDetail';
-import ProductDetail from './routes/ProductDetail';
+import BoardDetail from './component/BoardDetail.js';
+import ProductDetail from './routes/ProductDetail.js';
 import BoardData from './data/BoardData.js'
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import { Button, Container } from 'react-bootstrap';
+import AppSide from './component/AppSide.js';
+import Basket from './routes/Basket.js'
 
 
 function App() {
@@ -51,13 +51,14 @@ function App() {
           <Link to="/"><li>Home</li></Link>
           <Link to="/ProductList"><li>List</li></Link>
           <Link to="/Board"><li>Board</li></Link>
+          <Link to="/Basket"><li>Basket</li></Link>
         </ul>
         <button className='loginBtn'>Login</button>
       </header>
 
       <Routes>
         <Route path='/' element={
-          <>
+          <div>
             <div className='carouselContainer'>
               <h1>Best Products</h1>
               <button className='slideBtnLeft'
@@ -83,30 +84,35 @@ function App() {
               <div className={2 === carouselDott ? 'current' : 'dot'}></div>
             </div>
 
-            <h1 className='productsTile'>All Products</h1>
-            <div className='container productContainer'>
-              {
-                product.map((a, i) => {
-                  return (
-                    <div className='productItem' key={i} onClick={() => { navigate('/ProductDetail/'+ (product[i].no)) }}>
-                      <div>
-                        <img src={process.env.PUBLIC_URL + '/image/' + (product[i].imageName) + '.jpg'} />
-                      </div>
-                      <h4>{product[i].title}</h4>
-                      <p>price : {product[i].price}</p>
-                    </div>
-                  )
-                })
-              }
+            <div className='productCon'>
+              <h1 className='productsTile'>All Products</h1>
+              <div className='test1'>
+                <div className='productContainer'>
+                  {
+                    product.map((a, i) => {
+                      return (
+                        <div className='productItem' key={i} onClick={() => { navigate('/ProductDetail/' + (product[i].no)) }}>
+                          <div>
+                            <img src={process.env.PUBLIC_URL + '/image/' + (product[i].imageName) + '.jpg'} />
+                          </div>
+                          <h4>{product[i].title}</h4>
+                          <p>price : {product[i].price}</p>
+                        </div>
+                      )
+                    })
+                  }
 
+                </div>
+              </div>
+                <AppSide/>
             </div>
-
-          </>
+          </div>
         } />
         <Route path='/Board' element={<Board />} />
         <Route path='/BoardDetail/:id' element={<BoardDetail board={board} />} />
         <Route path='/ProductList' element={<ProductList />} />
         <Route path='/ProductDetail/:id' element={<ProductDetail product={product} />} />
+        <Route path='/Basket' element={<Basket/>} />
       </Routes>
 
 

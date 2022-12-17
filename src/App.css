@@ -77,11 +77,6 @@ header h2 {
   border-radius: 5px;
 }
 
-
-
-
-
-
 .carouselContainer {
   overflow: hidden;
   position: relative;
@@ -121,7 +116,6 @@ header h2 {
   background-color: #eee;
   color: black;
   cursor: pointer;
-  z-index: 5;
 }
 
 .slideBtnRight {
@@ -161,7 +155,48 @@ header h2 {
   margin: 0px 20px;
 }
 
+.productCon {
+  position: relative;
+  width: 100%;
+  height: 1400px;
+}
 
+.sideBar {
+  position: absolute;
+  top: 70px;
+  right: 100px;
+  bottom: 0px;
+}
+
+.viewItemBox {
+  position: sticky;
+  top: 20vh;
+  width: 150px;
+  height: 380px;
+  background-color: black;
+  color: white;
+  z-index: 1;
+  text-align: center;
+  padding: 20px 0 20px 0;
+  border-radius: 10px;
+}
+
+.viewItemBox>span {
+  border: 1px white solid;
+  padding: 3px;
+}
+
+.viewItemList {
+  width: 110px;
+  height: 80px;
+  margin: auto;
+  margin-bottom: 25px;
+}
+
+.viewItemImg {
+  width: 100%;
+  height: 100%;
+}
 
 .productsTile {
   text-align: center;
@@ -169,10 +204,14 @@ header h2 {
 }
 
 .productContainer {
+  width: 1050px;
+  position: absolute;
   display: flex;
   flex-wrap: wrap;
   margin-top: 20px;
   margin-bottom: 100px;
+  left: 50%;
+  transform: translate(-50%, 0%);
 }
 
 .productItem {
@@ -223,18 +262,12 @@ footer {
 
 
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media screen and (max-width: 1200px) {
+  .viewItemBox {
+    display: none;
   }
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
+  
+  .productItem {
+    width: 30%;
   }
 }
