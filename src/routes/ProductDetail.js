@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
-import style from "../css/ProductList.module.css";
+import style from "../css/ProductList.module.css"
 
 
 function ProductDetail(props) {
-    const [viewData, setViewData] = useState('');
+    const [viewData, setViewData] = useState('')
 
     const { id } = useParams();
     let product = props.product.find(prod => {
@@ -15,7 +15,14 @@ function ProductDetail(props) {
         let viewItem = []
         if (localStorage.getItem('data')) {
             viewItem = localStorage.getItem('data')
-            let viewItems = [{ 'imageName': product.imageName, 'productTitle': product.title }, ...JSON.parse(viewItem)]
+            let viewItemsOut = [{ 'imageName': product.imageName, 'productTitle': product.title }, ...JSON.parse(viewItem)]
+            let viewItemReduce = viewItemsOut.reduce((acc, cur)=>{
+                if(acc.findIndex(({ productTitle }) => productTitle === cur.productTitle) === -1) {
+                    acc.push(cur)
+                }
+                return acc
+            }, [])
+            let viewItems = [...viewItemReduce]
             if (viewItems.length > 3) {
                 viewItems.pop()
                 localStorage.setItem('data', JSON.stringify(viewItems))
