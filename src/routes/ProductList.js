@@ -1,9 +1,12 @@
 import { useState } from 'react'
 import style from '../css/ProductList.module.css'
 import productData from '../data.js'
+import { useNavigate } from 'react-router-dom';
 
 function ProductList() {
     let [product, setProduct] = useState(productData)
+    
+    let navigate = useNavigate();
     return (
         <div>
             <div className={style.productListTileBox}>
@@ -21,7 +24,7 @@ function ProductList() {
                     {
                         productData.map((a, i) => {
                             return (
-                                <div className={style.product} key={i}>
+                                <div className={style.product} key={i} onClick={()=>{navigate('/productDetail/' + (productData[i].no))}}>
                                     <div className={style.productImgDiv}>
                                         <img className={style.productImg} src={process.env.PUBLIC_URL + '/image/' + (product[i].imageName) + '.jpg'} />
                                     </div>

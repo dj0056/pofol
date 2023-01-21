@@ -15,7 +15,7 @@ function ProductDetail(props) {
         let viewItem = []
         if (localStorage.getItem('data')) {
             viewItem = localStorage.getItem('data')
-            let viewItemsOut = [{ 'imageName': product.imageName, 'productTitle': product.title }, ...JSON.parse(viewItem)]
+            let viewItemsOut = [{ 'imageName': product.imageName, 'productTitle': product.title, 'productNo': product.no }, ...JSON.parse(viewItem)]
             let viewItemReduce = viewItemsOut.reduce((acc, cur)=>{
                 if(acc.findIndex(({ productTitle }) => productTitle === cur.productTitle) === -1) {
                     acc.push(cur)
@@ -30,7 +30,7 @@ function ProductDetail(props) {
                 localStorage.setItem('data', JSON.stringify(viewItems))
             }
         } else {
-            viewItem = [{ 'imageName': product.imageName, 'productTitle': product.title }]
+            viewItem = [{ 'imageName': product.imageName, 'productTitle': product.title, 'productNo': product.no }]
             localStorage.setItem('data', JSON.stringify(viewItem))
         }
     }, [])
