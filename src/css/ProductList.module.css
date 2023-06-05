@@ -1,6 +1,6 @@
 .productListTileBox {
     width: 1050px;
-    margin: auto;
+    margin: 0px auto 30px auto;
     text-align: center;
 }
 
@@ -22,6 +22,24 @@
     position: sticky;
     top: 200px;
     float: left;
+}
+
+.sideBarList {
+    margin-top: 20px;
+}
+
+.sideBarList > div {
+    padding: 5px 0px 5px 0px;
+    font-size: 25px;
+    width: 50%;
+    margin: auto;
+    color: dimgray;
+    cursor: pointer;
+}
+
+.sideBarList > div:hover {
+    background-color: black;
+    color: #eee;
 }
 
 .productListMain {
@@ -62,13 +80,18 @@
     transition: 0.5s;
 }
 
+.productNull {
+    font-size: 30px;
+    text-align: center;
+}
+
 
 
 /* ProductDetail.js CSS */
 .productContainer {
     max-width: 1050px;
     height: 800px;
-    margin: 100px auto 100px auto;
+    margin: 0px auto 100px auto;
     background-color: rgb(196, 196, 196);
     border: 3px gray solid;
     border-radius: 10px;

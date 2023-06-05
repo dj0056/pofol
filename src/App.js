@@ -18,6 +18,7 @@ function App() {
   let [carouselDott, setCarouselDott] = useState(0)
   let [product, setProduct] = useState(productData)
   let [board, setBoard] = useState(BoardData)
+  let [loginFormState, setLoginFormState] = useState(false)
 
   let navigate = useNavigate();
 
@@ -25,6 +26,9 @@ function App() {
     if (carouselCount < 0) {
       setCarouselCount(carouselCount + i)
       setCarouselDott(carouselDott - 1)
+    } else {
+      setCarouselCount(-2)
+      setCarouselDott(2)
     }
   }
 
@@ -45,6 +49,26 @@ function App() {
   return (
     <div className="App">
 
+      <div className='blackBg' style={{visibility: loginFormState ? 'visible' : 'hidden'}}>
+        <div className='loginModal'>
+          <h3 className='loginTitle'>Login</h3>
+          <form className='loginForm'>
+            <p>ID</p>
+            <input className='inputId' placeholder='ID를 입력하세요.'></input>
+            <p>PASSWORD</p>
+            <input className='inputPassword' placeholder='PASSWORD를 입력하세요.'></input>
+          </form>
+          <div className='loginBtnBox'>
+            <button className='loginBtn'>Login</button>
+            <button className='closeBtn' onClick={() => {
+              setLoginFormState(false)
+            }}>Close</button>
+          </div>
+        </div>
+      </div>
+
+      <div style={{ padding:"50px" }}></div>
+
       <header className='container'>
         <h2>Welcome Shop</h2>
         <ul className='headerList'>
@@ -53,7 +77,10 @@ function App() {
           <Link to="/Board"><li>Board</li></Link>
           <Link to="/Basket"><li>Basket</li></Link>
         </ul>
-        <button className='loginBtn'>Login</button>
+        <button className='headerLoginBtn'
+        onClick={() => {
+          setLoginFormState(true)
+        }}>Login</button>
       </header>
 
       <Routes>
@@ -104,7 +131,7 @@ function App() {
 
                 </div>
               </div>
-                <AppSide/>
+              <AppSide />
             </div>
           </div>
         } />
@@ -112,7 +139,7 @@ function App() {
         <Route path='/BoardDetail/:id' element={<BoardDetail board={board} />} />
         <Route path='/ProductList' element={<ProductList />} />
         <Route path='/ProductDetail/:id' element={<ProductDetail product={product} />} />
-        <Route path='/Basket' element={<Basket/>} />
+        <Route path='/Basket' element={<Basket />} />
       </Routes>
 
 

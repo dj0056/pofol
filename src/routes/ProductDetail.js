@@ -40,8 +40,6 @@ function ProductDetail(props) {
 
     }
 
-
-
     return (
         <div className={style.productContainer}>
             <div className={style.left}>
