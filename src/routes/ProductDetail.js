@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import style from "../css/ProductList.module.css"
+import { useDispatch } from 'react-redux'
+import { addProduct } from '../store/store.js'
 
 
 function ProductDetail(props) {
     const [viewData, setViewData] = useState('')
-
+    
+    let dispatch = useDispatch()
     const { id } = useParams();
     let product = props.product.find(prod => {
         return prod.no == parseInt(id)
@@ -35,9 +38,8 @@ function ProductDetail(props) {
         }
     }, [])
 
-    function buyBtn() {
-        
-
+    function buyBtn(product) {
+        dispatch(addProduct(product))
     }
 
     return (
@@ -51,7 +53,7 @@ function ProductDetail(props) {
                 <div className={style.rightScriptBox}>
                     <h1 className={style.title}>{product.title}</h1>
                     <p className={style.price}>{product.price}원</p>
-                    <button className={style.buyBtn} onClick={() => { buyBtn() }}>구매하기</button>
+                    <button className={style.buyBtn} onClick={() => { buyBtn(product) }}>구매하기</button>
                 </div>
             </div>
             <div style={{ clear: 'both' }}></div>

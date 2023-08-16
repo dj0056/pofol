@@ -138,10 +138,6 @@ header h2 {
   margin: 3px 0px;
 }
 
-.inputId:focus, .inputPassword:focus {
-  border: 1px solid black;
-}
-
 .loginBtn, .closeBtn {
   padding: 8px 10px;
   background-color: black;
@@ -165,7 +161,7 @@ header h2 {
 .carouselContainer h1 {
   text-align: center;
   margin-top: 50px;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 
 .carousel {

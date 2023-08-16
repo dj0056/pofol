@@ -49,8 +49,12 @@ function App() {
   return (
     <div className="App">
 
-      <div className='blackBg' style={{visibility: loginFormState ? 'visible' : 'hidden'}}>
-        <div className='loginModal'>
+      <div className='blackBg' style={{visibility: loginFormState ? 'visible' : 'hidden'}}
+      onClick={(e) => {
+        
+        setLoginFormState(false)
+      }}>
+        <div className='loginModal' onClick={(e) => {e.stopPropagation()}}>
           <h3 className='loginTitle'>Login</h3>
           <form className='loginForm'>
             <p>ID</p>

@@ -150,3 +150,7 @@
     border: none;
     border-radius: 10px;
 }
+
+.buyBtn:hover {
+    background-color: black;
+}

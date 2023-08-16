@@ -1,0 +1,41 @@
+.basketContainer {
+    width: 1050px;
+    margin: 0px auto 30px auto;
+    height: 700px;
+}
+
+table {
+    margin: 30px auto 0px auto;
+    width: 800px;
+    border-collapse: collapse;
+}
+
+th {
+    border-bottom: 2px solid gray;
+}
+
+tr {
+    text-align: center;
+}
+
+td {
+    border-bottom: 1px solid black;
+    padding: 10px 0px 10px 0px;
+}
+
+.itemCountBtn {
+    padding: 3px 10px;
+    margin-right: 3px;
+    border: none;
+    border-radius: 5px;
+    background-color: darkgrey;
+    color: black;
+}
+
+.itemDeletBtn {
+    padding: 3px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: crimson;
+    color: white;
+}
